@@ -55,7 +55,7 @@ class _LoginTextFieldState extends State<LoginTextField> {
                 visible: widget.isPassword,
                 child: IconButton(
                   icon: Icon(
-                    Icons.remove_red_eye,
+                    widget.obscureText ? Icons.visibility : Icons.visibility_off,
                     color: widget.obscureText ? Colors.black26 : Colors.pink,
                     size: 24,
                   ),
