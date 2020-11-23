@@ -1,27 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
-class LoginTextField extends StatelessWidget {
+class LoginTextField extends StatefulWidget {
   final IconData icon;
   final String hint;
   final String label;
   final TextInputType inputType;
-  final bool obscureText;
+  bool obscureText;
+  final bool isPassword;
 
-  LoginTextField(
-      {this.icon,
-      this.label,
-      this.hint,
-      this.inputType = TextInputType.text,
-      this.obscureText = false});
+  LoginTextField({
+    this.icon,
+    this.label,
+    this.hint,
+    this.inputType = TextInputType.text,
+    this.obscureText = false,
+    this.isPassword = false,
+  });
 
+  @override
+  _LoginTextFieldState createState() => _LoginTextFieldState();
+}
+
+class _LoginTextFieldState extends State<LoginTextField> {
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         PlatformText(
-          label != null ? label : null,
+          widget.label != null ? widget.label : null,
           style: kLabelStyle,
         ),
         SizedBox(height: 10.0),
@@ -29,24 +37,37 @@ class LoginTextField extends StatelessWidget {
           alignment: Alignment.centerLeft,
           decoration: kBoxDecorationStyle,
           height: 60.0,
-          child: PlatformTextField(
-            obscureText: obscureText,
-            keyboardType: inputType,
+          child: TextField(
+            obscureText: widget.obscureText,
+            keyboardType: widget.inputType,
             style: TextStyle(
               color: Colors.white,
               fontFamily: 'OpenSans',
             ),
-            material: (_, __) => MaterialTextFieldData(
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(top: 14.0),
-                  prefixIcon: Icon(
-                    icon != null ? icon : null,
-                    color: Colors.white,
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
+                widget.icon != null ? widget.icon : null,
+                color: Colors.white,
+              ),
+              suffixIcon: Visibility(
+                visible: widget.isPassword,
+                child: IconButton(
+                  icon: Icon(
+                    Icons.remove_red_eye,
+                    color: widget.obscureText ? Colors.black26 : Colors.pink,
+                    size: 24,
                   ),
-                  hintText: hint != null ? hint : null,
-                  hintStyle: kHintTextStyle,
-                )
+                  onPressed: () {
+                    setState(() {
+                      widget.obscureText = !widget.obscureText;
+                    });
+                  },
+                ),
+              ),
+              hintText: widget.hint != null ? widget.hint : null,
+              hintStyle: kHintTextStyle,
             ),
           ),
         ),
