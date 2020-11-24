@@ -31,7 +31,7 @@ class Login extends StatelessWidget {
             child: SingleChildScrollView(
               padding: EdgeInsets.symmetric(
                 horizontal: 40.0,
-                vertical: 120.0,
+                vertical: 100.0,
               ),
               child: Column(
                 children: [
@@ -59,6 +59,40 @@ class Login extends StatelessWidget {
                     obscureText: true,
                     isPassword: true,
                   ),
+                  Container(
+                    alignment: Alignment.centerRight,
+                    child: FlatButton(
+                      padding: EdgeInsets.all(0),
+                      onPressed: () => print('Forgot Password Button Pressed'),
+                      child: Text(
+                        'Forgot password',
+                        style: kLabelStyle,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 16,),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          color: Colors.white,
+                          thickness: 1,
+                          endIndent: 16,
+                        ),
+                      ),
+                      Text(
+                        'or',
+                        style: kLabelStyle,
+                      ),
+                      Expanded(
+                        child: Divider(
+                          color: Colors.white,
+                          thickness: 1,
+                          indent: 16,
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
