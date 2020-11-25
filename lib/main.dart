@@ -1,4 +1,3 @@
-import 'package:couplesapp/screens/home.dart';
 import 'package:couplesapp/screens/login.dart';
 import 'package:couplesapp/widgets/cupertino_theme.dart';
 import 'package:couplesapp/widgets/material_theme.dart';

@@ -1,4 +1,5 @@
 import 'package:couplesapp/widgets/app_bar.dart';
+import 'package:couplesapp/widgets/login/login_button.dart';
 import 'package:couplesapp/widgets/login/login_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
@@ -70,7 +71,12 @@ class Login extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 16,),
+                  LoginButton(
+                    text: "Sign in",
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
                   Row(
                     children: [
                       Expanded(
@@ -92,7 +98,10 @@ class Login extends StatelessWidget {
                         ),
                       ),
                     ],
-                  )
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
                 ],
               ),
             ),
