@@ -1,4 +1,5 @@
 import 'package:couplesapp/widgets/app_bar.dart';
+import 'package:couplesapp/widgets/circular_button.dart';
 import 'package:couplesapp/widgets/login/login_button.dart';
 import 'package:couplesapp/widgets/login/login_text_field.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class Login extends StatelessWidget {
             child: SingleChildScrollView(
               padding: EdgeInsets.symmetric(
                 horizontal: 40.0,
-                vertical: 100.0,
+                vertical: 80.0,
               ),
               child: Column(
                 children: [
@@ -102,6 +103,20 @@ class Login extends StatelessWidget {
                   SizedBox(
                     height: 16,
                   ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: CircularButton(
+                          logo: AssetImage('images/facebook_logo.png'),
+                        ),
+                      ),
+                      Expanded(
+                        child: CircularButton(
+                            logo: AssetImage('images/google_logo.png')
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
