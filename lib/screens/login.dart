@@ -29,98 +29,142 @@ class Login extends StatelessWidget {
             ),
           ),
           Container(
-            height: double.infinity,
+            padding: EdgeInsets.symmetric(
+              horizontal: 40.0,
+            ),
             child: SingleChildScrollView(
-              padding: EdgeInsets.symmetric(
-                horizontal: 40.0,
-                vertical: 80.0,
-              ),
-              child: Column(
-                children: [
-                  PlatformText(
-                    'Sign In',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'OpenSans',
-                      fontSize: 30.0,
-                      fontWeight: FontWeight.bold,
+              child: Container(
+                child: Stack(
+                  children: [
+                    Column(
+                      children: [
+                        PlatformText(
+                          'Sign In',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'OpenSans',
+                            fontSize: 30.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 30.0),
+                        LoginTextField(
+                          icon: Icons.email,
+                          label: 'Email',
+                          hint: 'Enter your email',
+                          inputType: TextInputType.emailAddress,
+                        ),
+                        SizedBox(height: 30.0),
+                        LoginTextField(
+                          icon: Icons.lock,
+                          label: 'Password',
+                          hint: 'Enter your password',
+                          obscureText: true,
+                          isPassword: true,
+                        ),
+                        Container(
+                          alignment: Alignment.centerRight,
+                          child: FlatButton(
+                            padding: EdgeInsets.all(0),
+                            onPressed: () =>
+                                print('Forgot Password Button Pressed'),
+                            child: Text(
+                              'Forgot password',
+                              style: kLabelStyle,
+                            ),
+                          ),
+                        ),
+                        LoginButton(
+                          text: "Sign in",
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Divider(
+                                color: Colors.white,
+                                thickness: 1,
+                                endIndent: 16,
+                              ),
+                            ),
+                            Text(
+                              'or',
+                              style: kLabelStyle,
+                            ),
+                            Expanded(
+                              child: Divider(
+                                color: Colors.white,
+                                thickness: 1,
+                                indent: 16,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: CircularButton(
+                                logo: AssetImage('images/facebook_logo.png'),
+                              ),
+                            ),
+                            Expanded(
+                              child: CircularButton(
+                                  logo: AssetImage('images/google_logo.png')),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                  ),
-                  SizedBox(height: 30.0),
-                  LoginTextField(
-                    icon: Icons.email,
-                    label: 'Email',
-                    hint: 'Enter your email',
-                    inputType: TextInputType.emailAddress,
-                  ),
-                  SizedBox(height: 30.0),
-                  LoginTextField(
-                    icon: Icons.lock,
-                    label: 'Password',
-                    hint: 'Enter your password',
-                    obscureText: true,
-                    isPassword: true,
-                  ),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    child: FlatButton(
-                      padding: EdgeInsets.all(0),
-                      onPressed: () => print('Forgot Password Button Pressed'),
-                      child: Text(
-                        'Forgot password',
-                        style: kLabelStyle,
-                      ),
-                    ),
-                  ),
-                  LoginButton(
-                    text: "Sign in",
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Divider(
-                          color: Colors.white,
-                          thickness: 1,
-                          endIndent: 16,
-                        ),
-                      ),
-                      Text(
-                        'or',
-                        style: kLabelStyle,
-                      ),
-                      Expanded(
-                        child: Divider(
-                          color: Colors.white,
-                          thickness: 1,
-                          indent: 16,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: CircularButton(
-                          logo: AssetImage('images/facebook_logo.png'),
-                        ),
-                      ),
-                      Expanded(
-                        child: CircularButton(
-                            logo: AssetImage('images/google_logo.png')
-                        ),
-                      ),
-                    ],
-                  )
-                ],
+                  ],
+                ),
               ),
             ),
-          )
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              color: Colors.pink,
+              child: Padding(
+                padding: EdgeInsets.only(
+                  bottom: 16,
+                  top: 8,
+                ),
+                child:
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  GestureDetector(
+                    onTap: () => print('Sign Up Button Pressed'),
+                    child: RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: 'Don\'t have an Account? ',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          TextSpan(
+                            text: 'Sign Up',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ]),
+              ),
+            ),
+          ),
         ],
       ),
     );

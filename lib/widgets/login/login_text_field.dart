@@ -38,6 +38,7 @@ class _LoginTextFieldState extends State<LoginTextField> {
           decoration: kBoxDecorationStyle,
           height: 60.0,
           child: TextField(
+            cursorColor: Colors.pink,
             obscureText: widget.obscureText,
             keyboardType: widget.inputType,
             style: TextStyle(

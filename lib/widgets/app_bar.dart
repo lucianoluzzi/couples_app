@@ -7,9 +7,5 @@ PlatformAppBar getAppBar(BuildContext context) {
       elevation: 0,
       brightness: Brightness.dark,
     ),
-    title: Text(
-      "Couples",
-      style: Theme.of(context).textTheme.headline1,
-    ),
   );
 }
