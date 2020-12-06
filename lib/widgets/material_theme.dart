@@ -36,7 +36,11 @@ class LightTheme {
     textTheme: TextTheme(
       bodyText1: TextStyle(
         fontSize: 16.0,
-        color: Colors.black87,
+        color: Colors.black,
+      ),
+      bodyText2: TextStyle(
+        fontSize: 16.0,
+        color: Colors.white,
       ),
       headline1: TextStyle(
         fontSize: 24.0,
@@ -82,6 +86,10 @@ class DarkTheme {
     accentColor: Colors.purple[300],
     textTheme: TextTheme(
       bodyText1: TextStyle(
+        fontSize: 16.0,
+        color: Colors.black87,
+      ),
+      bodyText2: TextStyle(
         fontSize: 16.0,
         color: Colors.black87,
       ),
