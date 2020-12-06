@@ -8,6 +8,9 @@ class LoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+    bool isDarkModeOn = brightness == Brightness.dark;
+
     return Container(
       width: double.infinity,
       child: RaisedButton(
@@ -20,7 +23,7 @@ class LoginButton extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-            color: Colors.pink,
+            color: isDarkModeOn ? Theme.of(context).textTheme.bodyText1.color : Colors.pink,
             fontWeight: FontWeight.bold,
             fontSize: 18.0,
             fontFamily: 'OpenSans',
@@ -30,7 +33,7 @@ class LoginButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
         ),
-        color: Colors.white,
+        color: !isDarkModeOn ? Colors.white : null,
         onPressed: () {},
       ),
     );

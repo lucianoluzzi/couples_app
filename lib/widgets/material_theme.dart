@@ -26,15 +26,18 @@ class LightTheme {
     800: Color.fromRGBO(176, 0, 78, .9),
     900: Color.fromRGBO(176, 0, 78, 1),
   };
+  static MaterialColor _primaryColorLight = MaterialColor(0xFFFF6090, _primaryLightSwatch);
 
   final lightTheme = ThemeData(
     brightness: Brightness.light,
     primaryColor: Colors.pink[500],
-    primaryColorLight: MaterialColor(0xFFFF6090, _primaryLightSwatch),
+    primaryColorLight: _primaryColorLight,
     primaryColorDark: MaterialColor(0xFFB0003A, _primaryDarkSwatch),
     accentColor: Colors.purple[500],
-    buttonColor: Colors.purple[500],
     backgroundColor: Colors.pink[200],
+    buttonTheme: ButtonThemeData(
+        buttonColor: _primaryColorLight,
+    ),
     textTheme: TextTheme(
       bodyText1: TextStyle(
         fontSize: 16.0,
@@ -79,15 +82,18 @@ class DarkTheme {
     800: Color.fromRGBO(191, 95, 130, .9),
     900: Color.fromRGBO(191, 95, 130, 1),
   };
+  static MaterialColor _primaryColorLight = MaterialColor(0xFFFFC1E3, _primaryLightSwatch);
 
   final darkTheme = ThemeData(
     brightness: Brightness.dark,
     primaryColor: Colors.pink[200],
-    primaryColorLight: MaterialColor(0xFFFFC1E3, _primaryLightSwatch),
+    primaryColorLight: _primaryColorLight,
     primaryColorDark: MaterialColor(0xFFBF5F82, _primaryDarkSwatch),
     accentColor: Colors.purple[300],
-    buttonColor: Colors.purple[300],
     backgroundColor: Colors.black45,
+    buttonTheme: ButtonThemeData(
+      buttonColor: _primaryColorLight,
+    ),
     textTheme: TextTheme(
       bodyText1: TextStyle(
         fontSize: 16.0,
