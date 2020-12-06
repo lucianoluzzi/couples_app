@@ -20,10 +20,9 @@ class Login extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Colors.pink[200],
-                  Colors.pink[300],
-                  Colors.pink[400],
-                  Colors.pink[500],
+                  Theme.of(context).primaryColorLight,
+                  Theme.of(context).primaryColor,
+                  Theme.of(context).primaryColorDark,
                 ],
               ),
             ),
@@ -130,7 +129,7 @@ class Login extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              color: Colors.pink,
+              color: Colors.transparent,
               child: Padding(
                 padding: EdgeInsets.only(
                   bottom: 16,
