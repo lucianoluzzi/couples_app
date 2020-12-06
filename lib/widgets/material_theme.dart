@@ -33,6 +33,8 @@ class LightTheme {
     primaryColorLight: MaterialColor(0xFFFF6090, _primaryLightSwatch),
     primaryColorDark: MaterialColor(0xFFB0003A, _primaryDarkSwatch),
     accentColor: Colors.purple[500],
+    buttonColor: Colors.purple[500],
+    backgroundColor: Colors.pink[200],
     textTheme: TextTheme(
       bodyText1: TextStyle(
         fontSize: 16.0,
@@ -81,9 +83,11 @@ class DarkTheme {
   final darkTheme = ThemeData(
     brightness: Brightness.dark,
     primaryColor: Colors.pink[200],
-    primaryColorLight: MaterialColor(0xFFFFC1E3, _primaryDarkSwatch),
+    primaryColorLight: MaterialColor(0xFFFFC1E3, _primaryLightSwatch),
     primaryColorDark: MaterialColor(0xFFBF5F82, _primaryDarkSwatch),
     accentColor: Colors.purple[300],
+    buttonColor: Colors.purple[300],
+    backgroundColor: Colors.black45,
     textTheme: TextTheme(
       bodyText1: TextStyle(
         fontSize: 16.0,
@@ -91,7 +95,7 @@ class DarkTheme {
       ),
       bodyText2: TextStyle(
         fontSize: 16.0,
-        color: Colors.black87,
+        color: Colors.white60,
       ),
       headline1: TextStyle(
         fontSize: 24.0,

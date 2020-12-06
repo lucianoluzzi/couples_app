@@ -10,8 +10,7 @@ class CircularButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RawMaterialButton(
       onPressed: () {},
-      elevation: 2.0,
-      fillColor: Colors.white,
+      fillColor: Colors.white54,
       child: Image(
           image: logo,
           fit: BoxFit.scaleDown,

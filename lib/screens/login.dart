@@ -20,9 +20,8 @@ class Login extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Theme.of(context).primaryColorLight,
-                  Theme.of(context).primaryColor,
                   Theme.of(context).primaryColorDark,
+                  Theme.of(context).backgroundColor,
                 ],
               ),
             ),
@@ -84,18 +83,18 @@ class Login extends StatelessWidget {
                             children: [
                               Expanded(
                                 child: Divider(
-                                  color: Colors.white,
+                                  color: Colors.white60,
                                   thickness: 1,
                                   endIndent: 16,
                                 ),
                               ),
                               Text(
                                 'or',
-                                style: kLabelStyle,
+                                style: Theme.of(context).textTheme.bodyText2,
                               ),
                               Expanded(
                                 child: Divider(
-                                  color: Colors.white,
+                                  color: Colors.white60,
                                   thickness: 1,
                                   indent: 16,
                                 ),
@@ -144,20 +143,16 @@ class Login extends StatelessWidget {
                         children: [
                           TextSpan(
                             text: 'Don\'t have an Account? ',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.w400,
-                            ),
+                            style: Theme.of(context).textTheme.bodyText2,
                           ),
                           TextSpan(
-                            text: 'Sign Up',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
+                              text: 'Sign Up',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyText2
+                                  .copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  )),
                         ],
                       ),
                     ),
