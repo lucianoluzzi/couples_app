@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 final materialThemeData = ThemeData(
   brightness: Brightness.light,
-  primarySwatch: MaterialColor(Colors.pink[200].value, _pinkPallete),
+  primaryColor: Colors.pink[300],
+  accentColor: Colors.purple[300],
   textTheme: TextTheme(
     headline1: TextStyle(
       fontSize: 24.0,
