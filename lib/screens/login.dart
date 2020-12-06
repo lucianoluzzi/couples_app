@@ -39,12 +39,11 @@ class Login extends StatelessWidget {
                         children: [
                           PlatformText(
                             'Sign In',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'OpenSans',
-                              fontSize: 30.0,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style:
+                                Theme.of(context).textTheme.bodyText2.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 30,
+                                    ),
                           ),
                           SizedBox(height: 30.0),
                           LoginTextField(
@@ -69,7 +68,7 @@ class Login extends StatelessWidget {
                                   print('Forgot Password Button Pressed'),
                               child: Text(
                                 'Forgot password',
-                                style: kLabelStyle,
+                                style: Theme.of(context).textTheme.bodyText2,
                               ),
                             ),
                           ),
