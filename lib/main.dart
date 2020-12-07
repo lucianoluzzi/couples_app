@@ -1,8 +1,11 @@
+import 'package:couplesapp/cubit/login_cubit.dart';
+import 'package:couplesapp/repository/login_repository.dart';
 import 'package:couplesapp/screens/login.dart';
 import 'package:couplesapp/widgets/material_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,7 +22,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: LightTheme().lightTheme,
       darkTheme: DarkTheme().darkTheme,
-      home: Login(),
+      home: BlocProvider(
+        create: (context) => LoginCubit(LoginRepository()),
+        child: Login(),
+      ),
     );
   }
 }
